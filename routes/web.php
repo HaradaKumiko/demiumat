@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+    Route::resource('/users', 'UserController');
+    Route::get('/settings', 'SettingController@index')->name('setting.index');
+    Route::put('/settings', 'SettingController@update')->name('setting.update');
+    
+});

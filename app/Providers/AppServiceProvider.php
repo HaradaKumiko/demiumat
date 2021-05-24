@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use DB;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        \Illuminate\Support\Facades\Schema::defaultStringLength(191);
     }
 
     /**
@@ -23,6 +25,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        try {
+            Schema::hasTable('settings');
+            $web_config = DB::table('settings')->pluck('value','key');
+            config(['web_config'=>$web_config]);
+        }catch(\Exception $e) {
+            
+        }
     }
 }
