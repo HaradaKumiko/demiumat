@@ -1,6 +1,8 @@
-<div class="clearfix"></div>
-<footer>
-    <div class="container-fluid">
-        <p class="copyright">&copy; {{date('Y')}} Made with 💙 by <a href="https://www.facebook.com/han.rivaldy.5" target="_blank">Farhan Rivaldy </a></p>
+<footer class="main-footer">
+    <div class="footer-left">
+      Copyright &copy; {{date('Y')}} Made with 💙 by <a href="https://www.facebook.com/han.rivaldy.5" target="_blank">Farhan Rivaldy </a>
     </div>
-</footer>
+    <div class="footer-right">
+      2.3.0
+    </div>
+  </footer>

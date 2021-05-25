@@ -12,9 +12,15 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $search = $request->get('search');
+        if(!empty($search))
+        $users = User::where('name', 'LIKE', '%'.$search.'%')->orderBy('id', 'asc')->paginate(2);
+        else
+        $users = User::paginate(10);
+        return view('admin.users.index', compact('users'));
+
     }
 
     /**

@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/dashboard', 'HomeController@index')->name('dashboard');
     Route::resource('/users', 'UserController');
-    Route::get('/settings', 'SettingController@index')->name('setting.index');
-    Route::put('/settings', 'SettingController@update')->name('setting.update');
+    Route::get('/settings', 'SettingController@index')->name('settings.index');
+    Route::put('/settings', 'SettingController@update')->name('settings.update');
     
 });

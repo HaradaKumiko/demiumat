@@ -1,7 +1,7 @@
 @extends('layouts.master')
-@section('title' , 'Dashboard')
+@section('title' , 'Settings')
 @section('content')
-<div class="main">
+{{-- <div class="main">
     <div class="main-content">
         <div class="container-flud">  
 					<div class="panel panel-headline">
@@ -15,11 +15,11 @@
                             </p>
 						              </div>
 					                  	<div class="panel-body">
-                                <form action="{{ route('setting.update') }}" method="POST" enctype="multipart/form-data">  
+                                <form action="{{ route('settings.update') }}" method="POST" enctype="multipart/form-data">  
                                     @csrf
                                     @method('PUT')
                                     <div class="form-group  {{ $errors->has('WEB_PLACE_NAME') ? 'has-error' : '' }}">
-                                      <label for="WEB_PLACE_NAME">Nama Masjid / Musholla</label>
+                                      <label for="WEB_PLACE_NAME"></label>
                                       <input type="text" name="WEB_PLACE_NAME" class="form-control" value="{{ config('web_config')['WEB_PLACE_NAME'] }}">
                                       @if($errors->has('WEB_PLACE_NAME'))
                                           <span class="help-block">{{ $errors->first('WEB_PLACE_NAME') }}</span>
@@ -84,5 +84,93 @@
 					</div>
             </div>
         </div>
+    </div> --}}
+    <div class="main-content">
+      <section class="section">
+        <div class="section-header">
+          <h1>Pengaturan Website</h1>
+        </div>
+  
+        <div class="section-body">
+      <div class="card">
+        <div class="card-header">
+          <h4>General Settings</h4>
+        </div>
+        <form action="{{ route('settings.update') }}" method="POST" enctype="multipart/form-data"> 
+          @csrf
+          @method('PUT') 
+        <div class="card-body">
+          <div class="form-group row align-items-center">
+            <label for="site-title" class="form-control-label col-sm-3 text-md-right">Nama Masjid / Musholla</label>
+            <div class="col-sm-6 col-md-9">
+              <input type="text" name="WEB_PLACE_NAME" class="form-control" value="{{ config('web_config')['WEB_PLACE_NAME'] }}">
+            </div>
+          </div>
+
+          <div class="form-group row align-items-center">
+            <label for="site-description" class="form-control-label col-sm-3 text-md-right">Alamat Masjid / Musholla</label>
+            <div class="col-sm-6 col-md-9">
+              <textarea class="form-control" name="WEB_PLACE_ADDRESS">{{ config('web_config')['WEB_PLACE_ADDRESS'] }}</textarea>
+            </div>
+          </div>
+
+          <div class="form-group row align-items-center">
+            <label class="form-control-label col-sm-3 text-md-right">Logo Website</label>
+            <div class="col-sm-6 col-md-9">
+              <div class="custom-file">
+                <input type="file" name="WEB_LOGO" class="custom-file-input">
+                <label class="custom-file-label">Choose File</label>
+              </div>
+              <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
+            </div>
+          </div>
+
+          <div class="form-group row align-items-center">
+            <label class="form-control-label col-sm-3 text-md-right">Favicon</label>
+            <div class="col-sm-6 col-md-9">
+              <div class="custom-file">
+                <input type="file" name="WEB_FAVICON" class="custom-file-input">
+                <label class="custom-file-label">Choose File</label>
+              </div>
+              <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
+            </div>
+          </div>
+
+          <div class="form-group row align-items-center">
+            <label class="form-control-label col-sm-3 text-md-right">Gambar Latar Belakang</label>
+            <div class="col-sm-6 col-md-9">
+              <div class="custom-file">
+                <input type="file" name="WEB_BACKGROUND_IMAGE" class="custom-file-input">
+                <label class="custom-file-label">Choose File</label>
+              </div>
+              <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row align-items-center">
+          <label for="site-title" class="form-control-label col-sm-3 text-md-right">Header Website</label>
+          <div class="col-sm-6 col-md-9">
+            <input type="text" name="WEB_HEADER" class="form-control" value="{{ config('web_config')['WEB_HEADER'] }}">
+          </div>
+        </div>
+
+        <div class="form-group row align-items-center">
+          <label for="site-title" class="form-control-label col-sm-3 text-md-right">Semboyan Masjid / Musholla</label>
+          <div class="col-sm-6 col-md-9">
+            <input type="text" name="WEB_MOTTO" class="form-control" value="{{ config('web_config')['WEB_MOTTO'] }}">
+          </div>
+        </div>
+        
+        <div class="card-footer bg-whitesmoke text-md-right">
+          <button class="btn btn-primary" type="submit">Save Changes</button>
+        </div>
+      </div>
+    </form>
+  </div>
+        </div>
+      </div>
+        </div>
+      </section>
     </div>
 @endsection
