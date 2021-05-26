@@ -59,6 +59,7 @@ class UserController extends Controller
             'email.unique' => 'Email Sudah Digunakan, Silahkan Ganti Email Lain!',
 
             'avatar.mimes' => 'Format Avatar Harus Berupa : Jpg,Jpeg,Png!',
+            'avatar.max' => 'Ukuran Avatar Maximal 5 MB',
         ]);
 
         $user = new User;
@@ -158,7 +159,7 @@ class UserController extends Controller
         }
         $user->delete();
         
-        session()->flash('success', "Sukses Menhapus Pengguna");
+        session()->flash('success', "Sukses Menghapus Pengguna");
         return redirect()->route('users.index');
     }
 }

@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('role'); 
             $table->string('alamat')->nullable();
             $table->BigInteger('telepon')->nullable();
-            $table->string('avatar')->default('avatar/avatar-1.png');
+            $table->string('avatar')->default('avatar/default.png');
             $table->rememberToken();
             $table->timestamps();
         });
