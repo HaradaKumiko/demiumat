@@ -19,8 +19,10 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('role')->default('Warga'); // 0 = warga, 1 = pak rt /wakil, 2 = superadmin
-            $table->string('avatar')->nullable();
+            $table->string('role'); 
+            $table->string('alamat')->nullable();
+            $table->BigInteger('telepon')->nullable();
+            $table->string('avatar')->default('avatar/avatar-1.png');
             $table->rememberToken();
             $table->timestamps();
         });
