@@ -15,10 +15,10 @@
             </div>
             <div class="card-wrap">
               <div class="card-header">
-                <h4>Total Users</h4>
+                <h4>Total User</h4>
               </div>
               <div class="card-body">
-                {{totalUsers()}}
+                <h6> {{totalUsers()}} </h6>
               </div>
             </div>
           </div>
@@ -31,10 +31,26 @@
             </div>
             <div class="card-wrap">
               <div class="card-header">
-                <h4>Total Forums</h4>
+                <h4>Total Forum</h4>
               </div>
               <div class="card-body">
-                {{totalForums()}}
+                <h6> {{totalForums()}} </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+          <div class="card card-statistic-1">
+            <div class="card-icon bg-primary">
+              <i class="fas fa-money-bill-wave-alt"></i>
+            </div>
+            <div class="card-wrap">
+              <div class="card-header">
+                <h4>Saldo Kas</h4>
+              </div>
+              <div class="card-body">
+              <h6> Rp. {{number_format(totalCashs())}} </h6>
               </div>
             </div>
           </div>
@@ -50,27 +66,12 @@
                 <h4>Total Users</h4>
               </div>
               <div class="card-body">
-                {{totalUsers()}}
+                <h6> {{totalUsers()}} </h6>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-          <div class="card card-statistic-1">
-            <div class="card-icon bg-primary">
-              <i class="fas fa-users"></i>
-            </div>
-            <div class="card-wrap">
-              <div class="card-header">
-                <h4>Total Users</h4>
-              </div>
-              <div class="card-body">
-                {{totalUsers()}}
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
 
     <div class="card">
       <div class="card-header">
