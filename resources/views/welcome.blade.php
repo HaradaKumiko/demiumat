@@ -6,6 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Home - {{config('web_config')['WEB_TITLE']}}</title>
+  <link rel="shortcun icon" href="{{Storage::url(config('web_config')['WEB_FAVICON'])}}"/>
   <meta content="" name="description">
   <meta content="" name="keywords">
 

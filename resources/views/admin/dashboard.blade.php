@@ -78,10 +78,9 @@
         <h4>{{config('web_config')['WEB_HEADER']}} </h4>
       </div>
       <div class="card-body">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, esse! Voluptatum rerum labore laborum </p>
-      </div>
-      <div class="card-footer bg-whitesmoke">
-        This is card footer
+        <p>Masih banyak fitur yang akan dibuat, untuk mendapatkan update atau ikut berkontribusi silahkan kunjungi halaman <a href="https://github.com/HaradaKumiko/demiumat" target="__blank">Github</a> Saya.</p>
+         <p> Bila terdapat kendala dipersilahkan untuk menghubungi Saya, informasi kontak bisa lihat di halaman github yang sudah saya berikan </p>
+          <strong> Thank You - ありがとうございます	</strong>
       </div>
     </div>
 

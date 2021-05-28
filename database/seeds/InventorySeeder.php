@@ -30,7 +30,7 @@ class InventorySeeder extends Seeder
                 'status' => 'Tidak Layak',
                 'source' => 'Sumbangan',
                 'user_id' => 1,
-                'gallery' => 'gallery/default/img1.jpg',
+                'gallery' => 'gallery/default/img2.jpg',
                 'created_at' => Carbon::now()
             ],
 
