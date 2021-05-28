@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Storage;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,8 @@ class SettingController extends Controller
             'WEB_PLACE_ADDRESS' => 'required',
             'WEB_LOGO' => 'nullable|mimes:jpg,jpeg,png|max:5120',
             'WEB_FAVICON' => 'nullable|mimes:jpg,jpeg,png|max:5120',
-            'WEB_BACKGROUND_IMAGE' => 'nullable|mimes:jpg,jpeg,png|max:5120',
+            'WEB_PLACE_IMAGE' => 'nullable|mimes:jpg,jpeg,png|max:5120',
+            'WEB_TAKMIR_IMAGE' => 'nullable|mimes:jpg,jpeg,png|max:5120',
         ],
 
         [
@@ -34,21 +36,27 @@ class SettingController extends Controller
             'WEB_FAVICON.mimes' => 'Format Favicon Harus Berupa : Jpg,Jpeg,Png!',
             'WEB_FAVICON.max' => 'Ukuran Favicon Maximal 5 MB!',
 
-            'WEB_BACKGROUND_IMAGE.mimes' => 'Format Latar Belakang Harus Berupa : Jpg,Jpeg,Png!',
-            'WEB_BACKGROUND_IMAGE.max' => 'Ukuran Background Maximal 5 MB!',
+            'WEB_PLACE_IMAGE.mimes' => 'Gambar Masjid Harus Berupa : Jpg,Jpeg,Png!',
+            'WEB_PLACE_IMAGE.max' => 'Gambar Masjid Maximal 5 MB!',
+
+            'WEB_TAKMIR_IMAGE.mimes' => 'Gambar Takmir Masjid Harus Berupa : Jpg,Jpeg,Png!',
+            'WEB_TAKMIR_IMAGE.max' => 'Gambar Takmir Masjid 5 MB!',
         ]);
 
-        $updates = $request->all();
-        foreach($updates as $key => $value){
-            if($key == 'WEB_LOGO' || $key == 'WEB_FAVICON' || $key == 'WEB_BACKGROUND_IMAGE') {
-                $file = $request->file($key);
-                $filename = $file->getClientOriginalName();
-                $file->storeAs('assets/', $filename, 'public'); 
-                $value = $filename;    
-            }
 
-            Setting::where('key',$key)->update(['value' => $value]);
+        $setting = Setting::all()->pluck('value', 'key'); 
+        $setting->WEB_PLACE_NAME = $request->WEB_PLACE_NAME;
+        $setting->WEB_PLACE_ADDRESS = $request->WEB_PLACE_ADDRESS;
+
+        foreach($setting as $key => $value){
+        if($key == 'WEB_LOGO' || $key == 'WEB_FAVICON' || $key == 'WEB_PLACE_IMAGE' || $key == 'WEB_TAKMIR_IMAGE') {
+            if($request->hasFile($key)){
+                Storage::disk('public')->delete($value);
+                $value = $request->file($key)->store('assets/slide', 'public');
+            }
         }
+        Setting::where('key',$key)->update(['value' => $value]);
+    }
 
         session()->flash('success','Sukses Ubah Settings!');
         return redirect()->back();

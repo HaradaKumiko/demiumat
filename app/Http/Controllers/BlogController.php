@@ -43,6 +43,21 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'content' => 'required',
+            'thumbnail' => 'nullable|mimes:jpg,jpeg,png|max:5120',
+        ],
+
+        [
+            'title.required' => 'Judul Harus Diisi!',
+
+            'content.required' => 'Konten Harus Diisi!',
+
+            'thumbnail.mimes' => 'Format Thumbnail Harus Berupa : Jpg,Jpeg,Png!',
+            'thumbnail.max' => 'Ukuran Thumbnail Maximal 5 MB',
+        ]);
+
         $blog = new Blog;
         $blog->title = $request->title;
         $blog->slug =  Str::slug($request->title, '-') . '-' . time();
@@ -94,6 +109,21 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'content' => 'required',
+            'thumbnail' => 'nullable|mimes:jpg,jpeg,png|max:5120',
+        ],
+
+        [
+            'title.required' => 'Judul Harus Diisi!',
+
+            'content.required' => 'Konten Harus Diisi!',
+
+            'thumbnail.mimes' => 'Format Thumbnail Harus Berupa : Jpg,Jpeg,Png!',
+            'thumbnail.max' => 'Ukuran Thumbnail Maximal 5 MB',
+        ]);
+        
         $blog = Blog::findOrFail($id);
         $blog->title = $request->title;
         $blog->slug =  Str::slug($request->title, '-') . '-' . time();

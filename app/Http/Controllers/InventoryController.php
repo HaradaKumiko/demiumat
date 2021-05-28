@@ -42,6 +42,25 @@ class InventoryController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'amount' => 'required|numeric',
+            'source' => 'required',
+            'gallery' => 'nullable|mimes:jpg,jpeg,png|max:5120',
+        ],
+
+        [
+            'name.required' => 'Nama Inventaris Harus Diisi!',
+
+            'amount.required' => 'Jumlah Inventaris Harus Diisi!',
+            'amount.numeric' => 'Jumlah Inventaris Harus Berupa Angka!',
+
+            'source.required' => 'Sumber Inventaris Harus Diisi!',
+
+            'gallery.mimes' => 'Format Avatar Harus Berupa : Jpg,Jpeg,Png!',
+            'gallery.max' => 'Ukuran Avatar Maximal 5 MB',
+        ]);
+        
         $inventory = new Inventory;
         $inventory->name = $request->name;
         $inventory->amount = $request->amount;
@@ -89,6 +108,25 @@ class InventoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'amount' => 'required|numeric',
+            'source' => 'required',
+            'gallery' => 'nullable|mimes:jpg,jpeg,png|max:5120',
+        ],
+
+        [
+            'name.required' => 'Nama Inventaris Harus Diisi!',
+
+            'amount.required' => 'Jumlah Inventaris Harus Diisi!',
+            'amount.numeric' => 'Jumlah Inventaris Harus Berupa Angka!',
+
+            'source.required' => 'Sumber Inventaris Harus Diisi!',
+
+            'gallery.mimes' => 'Format Avatar Harus Berupa : Jpg,Jpeg,Png!',
+            'gallery.max' => 'Ukuran Avatar Maximal 5 MB',
+        ]);
+        
         $inventory = Inventory::findOrFail($id);
         $inventory->name = $request->name;
         $inventory->amount = $request->amount;

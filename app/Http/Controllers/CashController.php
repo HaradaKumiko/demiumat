@@ -49,6 +49,19 @@ class CashController extends Controller
      */
     public function storein(Request $request)
     {
+        $this->validate($request, [
+            'info' => 'required',
+            'amount' => 'required|numeric',
+        ],
+
+        [
+            'info.required' => 'Keterangan Harus Diisi!',
+
+            'amount.required' => 'Jumlah Harus Diisi!',
+            'amount.numeric' => 'Jumlah Harus Berupa Angka!',
+
+        ]);
+
         $cash = new Cash;
         $cash->info = $request->info;
         $cash->amount = $request->amount;
@@ -62,6 +75,19 @@ class CashController extends Controller
 
     public function storeout(Request $request)
     {
+        $this->validate($request, [
+            'info' => 'required',
+            'amount' => 'required|numeric',
+        ],
+
+        [
+            'info.required' => 'Keterangan Harus Diisi!',
+
+            'amount.required' => 'Jumlah Harus Diisi!',
+            'amount.numeric' => 'Jumlah Harus Berupa Angka!',
+
+        ]);
+
         $cash = new Cash;
         $cash->info = $request->info;
         $cash->amount = $request->amount;
@@ -105,6 +131,19 @@ class CashController extends Controller
      */
     public function updatein(Request $request, $id)
     {
+        $this->validate($request, [
+            'info' => 'required',
+            'amount' => 'required|numeric',
+        ],
+
+        [
+            'info.required' => 'Keterangan Harus Diisi!',
+
+            'amount.required' => 'Jumlah Harus Diisi!',
+            'amount.numeric' => 'Jumlah Harus Berupa Angka!',
+
+        ]);
+
         $cash = Cash::findOrFail($id);
         $cash->info = $request->info;
         $cash->amount = $request->amount;
@@ -135,6 +174,19 @@ class CashController extends Controller
      */
     public function updateout(Request $request, $id)
     {
+        $this->validate($request, [
+            'info' => 'required',
+            'amount' => 'required|numeric',
+        ],
+
+        [
+            'info.required' => 'Keterangan Harus Diisi!',
+
+            'amount.required' => 'Jumlah Harus Diisi!',
+            'amount.numeric' => 'Jumlah Harus Berupa Angka!',
+
+        ]);
+        
         $cash = Cash::findOrFail($id);
         $cash->info = $request->info;
         $cash->amount = $request->amount;

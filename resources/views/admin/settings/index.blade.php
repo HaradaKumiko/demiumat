@@ -73,18 +73,40 @@
           </div>
 
           <div class="form-group row align-items-center">
-            <label class="form-control-label col-sm-3 text-md-right">Gambar Latar Belakang</label>
+            <label class="form-control-label col-sm-3 text-md-right">Gambar Masjid</label>
             <div class="col-sm-6 col-md-9">
               <div class="custom-file">
-                <input type="file" name="WEB_BACKGROUND_IMAGE" class="form-control {{ $errors->has('WEB_BACKGROUND_IMAGE') ? 'is-invalid' : '' }}">
+                <figure>
+                  <img src="{{ Storage::url(config('web_config')['WEB_PLACE_IMAGE']) }}" alt="gallery" width="100">
+                </figure>
+                <input type="file" name="WEB_PLACE_IMAGE" class="form-control {{ $errors->has('WEB_PLACE_IMAGE') ? 'is-invalid' : '' }}">
               </div>
-              @if($errors->has('WEB_BACKGROUND_IMAGE'))
+              @if($errors->has('WEB_PLACE_IMAGE'))
               <div class="form-text text-danger">
-                {{$errors->first('WEB_BACKGROUND_IMAGE')}} 
+                {{$errors->first('WEB_PLACE_IMAGE')}} 
               </div>  
               @endif 
             </div>
           </div>
+
+          
+          <div class="form-group row align-items-center">
+            <label class="form-control-label col-sm-3 text-md-right">Gambar Takmir Masjid</label>
+            <div class="col-sm-6 col-md-9">
+              <div class="custom-file">
+                <figure>
+                  <img src="{{ Storage::url(config('web_config')['WEB_TAKMIR_IMAGE']) }}" alt="gallery" width="100">
+                </figure>
+                <input type="file" name="WEB_TAKMIR_IMAGE" class="form-control {{ $errors->has('WEB_TAKMIR_IMAGE') ? 'is-invalid' : '' }}">
+              </div>
+              @if($errors->has('WEB_TAKMIR_IMAGE'))
+              <div class="form-text text-danger">
+                {{$errors->first('WEB_TAKMIR_IMAGE')}} 
+              </div>  
+              @endif 
+            </div>
+          </div>
+
         </div>
 
         <div class="card-footer bg-whitesmoke text-md-right">
