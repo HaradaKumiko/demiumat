@@ -76,7 +76,13 @@
             @foreach ($cashs as $cash)
             <tr>
                <td>{{ $cash->info }}</td>
-               <td>{{ $cash->type }}</td>
+               <td>
+                @if ($cash->type == "Keluar")
+                <span class="badge badge-danger">{{ $cash->type }}</span>
+                @else
+                <span class="badge badge-success">{{ $cash->type }}</span>
+                 @endif
+                </td>
                <td>{{ $cash->created_at->diffForHumans() }}</td>
                <td>Rp. {{ number_format($cash->amount) }}</td>
             </tr>

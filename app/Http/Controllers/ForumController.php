@@ -63,7 +63,7 @@ class ForumController extends Controller
         $forum->slug =  Str::slug($request->title, '-') . '-' . time();
         $forum->content = $request->content;
         if($request->hasFile('thumbnail')){
-            $forum->thumbnail = $request->file('thumbnail')->store('thumbnail', 'public');
+            $forum->thumbnail = $request->file('thumbnail')->store('thumbnail/forums', 'public');
         }
         $forum->user_id = Auth::user()->id;
         $forum->save();
@@ -78,9 +78,10 @@ class ForumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $forum = Forum::where('slug', $slug)->first();
+        return view('forums.single', compact('forum'));
     }
 
     /**
@@ -92,8 +93,11 @@ class ForumController extends Controller
     public function edit($id)
     {
         $forum = Forum::findOrFail($id);
+        if($forum->ownership()){
         return view('forums.edit', compact('forum'));
-
+        }else{
+        abort(404);
+        }
     }
 
     /**
@@ -128,8 +132,9 @@ class ForumController extends Controller
             if($forum->thumbnail != "thumbnail/default.jpg"){
                 Storage::disk('public')->delete($forum->thumbnail);
             }
-            $forum->thumbnail = $request->file('thumbnail')->store('thumbnail', 'public');
+            $forum->thumbnail = $request->file('thumbnail')->store('thumbnail/forums', 'public');
         }
+        $forum->user_id = Auth::user()->id;
         $forum->save();
         
         session()->flash('success', "Sukses Ubah Forum $request->title");
@@ -145,11 +150,14 @@ class ForumController extends Controller
     public function destroy($id)
     {
         $forum = Forum::findOrFail($id);
+        if($forum->ownership()){
         if($forum->thumbnail != "thumbnail/default.jpg"){
             Storage::disk('public')->delete($forum->thumbnail);
         }
         $forum->delete();
-        
+        }else{
+        abort(404);
+        }
         session()->flash('success', "Sukses Menghapus Forum");
         return redirect()->route('forums.index');
     }

@@ -16,7 +16,7 @@ class CashController extends Controller
     public function index()
     {
         $cashs = Cash::orderBy('id', 'desc')->paginate(10);
-        return view('admin.cashs.index', compact('cashs'));
+        return view('admin.cashes.index', compact('cashs'));
     }
 
     /**
@@ -27,7 +27,7 @@ class CashController extends Controller
     public function createin()
     {
         $cashs = Cash::where('type', 'Masuk')->paginate(10);
-        return view('admin.cashs.createin', compact('cashs'));
+        return view('admin.cashes.createin', compact('cashs'));
     }
 
         /**
@@ -38,7 +38,7 @@ class CashController extends Controller
     public function createout()
     {
         $cashs = Cash::where('type', 'Keluar')->paginate(10);
-        return view('admin.cashs.createout', compact('cashs'));
+        return view('admin.cashes.createout', compact('cashs'));
     }
 
     /**
@@ -93,7 +93,7 @@ class CashController extends Controller
     public function editin($id)
     {
         $cash = Cash::findOrFail($id);
-        return view('admin.cashs.editin', compact('cash'));
+        return view('admin.cashes.editin', compact('cash'));
     }
 
     /**
@@ -123,7 +123,7 @@ class CashController extends Controller
     public function editout($id)
     {
         $cash = Cash::findOrFail($id);
-        return view('admin.cashs.editout', compact('cash'));
+        return view('admin.cashes.editout', compact('cash'));
     }
 
     /**

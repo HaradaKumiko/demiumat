@@ -1,22 +1,22 @@
 @extends('layouts.master')
-@section('title' , 'Tambah Forum')
+@section('title' , 'Tambah Blog')
 @section('content')
     <div class="main-content">
       <section class="section">
         <div class="section-header">
-          <h1>Tambah Forum</h1>
+          <h1>Tambah Blog</h1>
           <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="javascript:void(0);">Dashboard</a></div>
-            <div class="breadcrumb-item"><a href="javascript:void(0);">Tambah Forum</a></div>
+            <div class="breadcrumb-item"><a href="javascript:void(0);">Tambah Blog</a></div>
          </div>
         </div>
   
         <div class="section-body">
       <div class="card">
         <div class="card-header">
-          <h4>Tambah Forum</h4>
+          <h4>Tambah Blog</h4>
         </div>
-        <form action="{{ route('forums.store') }}" method="POST" enctype="multipart/form-data"> 
+        <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data"> 
           @csrf
         <div class="card-body">
 
@@ -45,7 +45,7 @@
           </div>
 
           <div class="form-group row align-items-center">
-            <label class="form-control-label col-sm-3 text-md-right">Thumbnail (opsional)</label>
+            <label class="form-control-label col-sm-3 text-md-right">Thumbnail</label>
             <div class="col-sm-6 col-md-9">
               <div class="custom-file">
                 <input type="file" name="thumbnail" class="form-control {{ $errors->has('thumbnail') ? 'is-invalid' : '' }}">

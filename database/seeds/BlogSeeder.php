@@ -1,11 +1,12 @@
 <?php
 
-use Carbon\Carbon;
-use App\Models\Forum;
-use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 
-class ForumSeeder extends Seeder
+use Carbon\Carbon;
+use App\Models\Blog;
+use Faker\Factory as Faker;
+
+class BlogSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,10 +17,10 @@ class ForumSeeder extends Seeder
     {
         $faker = Faker::create('id_ID');
 
-        Forum::insert([
+        Blog::insert([
             [
-                'title' => 'Website DemiUmat Telah Tersedia',
-                'slug' => 'Website-DemiUmat-Telah-Tersedia',
+                'title' => 'Mari jaga kebersamaannya',
+                'slug' => 'Mari-jaga-kebersamaannya',
                 'content' => $faker->text(200),
                 'thumbnail' => 'thumbnail/default/default.jpg',
                 'user_id' => 1,
@@ -27,7 +28,7 @@ class ForumSeeder extends Seeder
             ],
 
             [
-                'title' => 'Laporan Kas Masjid Baitus Sholihin periode '. $faker->date('d-m-Y'),
+                'title' => 'agenda kerja bakti',
                 'slug' => 'Laporan-Kas-Masjid',
                 'content' => $faker->text(200),
                 'thumbnail' => 'thumbnail/default/img1.jpg',
@@ -36,14 +37,13 @@ class ForumSeeder extends Seeder
             ],
 
             [
-                'title' => 'Jangan Lupa Tahlilan Dirumah Pak Hidayat',
-                'slug' => 'Jangan-Lupa-Tahlilan-Dirumah-Pak-Hidayat',
+                'title' => 'tabligh akbar tahunan',
+                'slug' => 'tabligh-akbar-tahunan',
                 'content' => $faker->text(200),
                 'thumbnail' => 'thumbnail/default/img2.jpg',
                 'user_id' => 3,
                 'created_at' => Carbon::now()
             ],
         ]);
-        
     }
 }

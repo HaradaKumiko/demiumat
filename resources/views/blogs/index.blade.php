@@ -2,22 +2,22 @@
 @section('css')
 <link href="{{ asset('assets/vendor/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet">
 @endsection
-@section('title' , 'Forum')
+@section('title' , 'Blog')
 @section('content')
 
 <div class="main-content">
    <section class="section">
       <div class="section-header">
-         <h1>Forum</h1>
+         <h1>Blog</h1>
          <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="javascript:void(0);">Dashboard</a></div>
-            <div class="breadcrumb-item"><a href="javascript:void(0);">Forum</a></div>
+            <div class="breadcrumb-item"><a href="javascript:void(0);">Blog</a></div>
          </div>
       </div>
       <div class="section-body">
          <div class="card">
             <div class="card-header">
-               <h4>Daftar Forum {{config('web_config')['WEB_TITLE']}} </h4>
+               <h4>Daftar Blog {{config('web_config')['WEB_TITLE']}} </h4>
             </div>
             <div class="card-body">
                <div class="row">
@@ -28,7 +28,7 @@
                      </form>
                   </div>
                   <div class="col-md-2 ml-auto">
-                     <a class="btn btn-primary float-right" href="{{ route('forums.create') }}">Tambah </a>
+                     <a class="btn btn-primary float-right" href="{{ route('blogs.create') }}">Tambah </a>
                   </div>
                </div>
             </div>
@@ -42,19 +42,19 @@
                      <th>Aksi</th>
                   </tr>
                   <tbody>
-                     @foreach ($forums as $forum)
+                     @foreach ($blogs as $blog)
                      <tr>
-                        <td> 
-                           <a href="{{route('forums.show',  ['forum' => $forum->slug])}}">{{ substr($forum->title, 0, 35)}}...</a>
-                           </td>
-                        <td><img src="{{ Storage::url($forum->thumbnail) }}" alt="thumbnail" width="100"></td>
-                        <td>{{ substr($forum->content, 0, 20)}}...</td>
-                        <td>{{ $forum->created_at->diffForHumans() }}</td>
                         <td>
-                           @if ($forum->ownership())
+                           <a href="{{route('blogs.show',  ['blog' => $blog->slug])}}">{{ substr($blog->title, 0, 35)}}...</a>
+                        </td>
+                        <td><img src="{{ Storage::url($blog->thumbnail) }}" alt="thumbnail" width="100"></td>
+                        <td>{{ substr($blog->content, 0, 20)}}...</td>
+                        <td>{{ $blog->created_at->diffForHumans() }}</td>
+                        <td>
+                           @if ($blog->ownership())
                            <div class='d-inline-flex'>
-                              <a href="{{ route('forums.edit', ['forum' => $forum->id]) }}" class='btn btn-icon icon-left btn-warning btn-sm mr-2'><i class="fas fa-edit"></i>Edit</a>
-                              <form action="{{ route('forums.destroy', ['forum' => $forum->id]) }}" method="post">
+                              <a href="{{ route('blogs.edit', ['blog' => $blog->id]) }}" class='btn btn-icon icon-left btn-warning btn-sm mr-2'><i class="fas fa-edit"></i>Edit</a>
+                              <form action="{{ route('blogs.destroy', ['blog' => $blog->id]) }}" method="post">
                                  @csrf
                                  @method('delete')
                                  <button type="button" class='btn btn-icon icon-left btn-danger btn-sm btn-delete'><i class="fas fa-trash"></i>Hapus</button>
@@ -69,7 +69,7 @@
             </div>
             <div class="col-md-6 ml-auto">
                <ul class="pagination float-right">
-                  <li class="page-item"> {{$forums->links()}} </li>
+                  <li class="page-item"> {{$blogs->links()}} </li>
                </ul>
             </div>
          </div>

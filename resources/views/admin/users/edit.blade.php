@@ -80,7 +80,7 @@
           </div>
 
           <div class="form-group row align-items-center">
-            <label class="form-control-label col-sm-3 text-md-right">Avatar</label>
+            <label class="form-control-label col-sm-3 text-md-right">Avatar (opsional)</label>
             <div class="col-sm-6 col-md-9">
               <div class="custom-file">
                 <figure>

@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
         'role'     => 'Administrator', 
         'alamat'   => 'Gang Osaka Nomor 33 RT 40',
         'telepon'  => '081390905566',
-        'avatar' => 'avatar/default.png'
+        'avatar' => 'avatar/default/farhanrivaldy.jpg'
         ],
 
         [ 
@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
         'role' => 'Pengurus Takmir', 
         'alamat'   => 'Gang Tokyo Nomor 16 RT 41',
         'telepon'  => '089656782356',
-        'avatar' => 'avatar/default.png'
+        'avatar' => 'avatar/default/budihidayat.jpg'
         ],
 
         [ 
@@ -41,7 +41,7 @@ class UserSeeder extends Seeder
         'role' => 'Warga', 
         'alamat'   => 'Gang Kyoto Nomor 4 RT 39',
         'telepon'  => '081357385098',
-        'avatar' => 'avatar/default.png'
+        'avatar' => 'avatar/default/yonosaefullah.jpg'
         ],
         ]);
     }

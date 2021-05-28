@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCashsTable extends Migration
+class CreateInventoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateCashsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cashs', function (Blueprint $table) {
+        Schema::create('inventories', function (Blueprint $table) {
             $table->id();
-            $table->mediumText('info');
+            $table->string('name');
             $table->unsignedBigInteger('amount');
-            $table->string('type');
+            $table->string('status');
+            $table->string('source');
+            $table->string('gallery')->default('gallery/default.jpg');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
@@ -32,6 +34,6 @@ class CreateCashsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cashs');
+        Schema::dropIfExists('inventories');
     }
 }
