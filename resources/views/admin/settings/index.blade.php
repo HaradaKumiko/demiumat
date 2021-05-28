@@ -48,6 +48,9 @@
             <label class="form-control-label col-sm-3 text-md-right">Logo Website</label>
             <div class="col-sm-6 col-md-9">
               <div class="custom-file">
+                <figure>
+                  <img src="{{ Storage::url(config('web_config')['WEB_LOGO']) }}" alt="gallery" width="100">
+                </figure>
                 <input type="file" name="WEB_LOGO" class="form-control {{ $errors->has('WEB_LOGO') ? 'is-invalid' : '' }}">
               </div>
               @if($errors->has('WEB_LOGO'))
@@ -62,6 +65,9 @@
             <label class="form-control-label col-sm-3 text-md-right">Favicon</label>
             <div class="col-sm-6 col-md-9">
               <div class="custom-file">
+                <figure>
+                  <img src="{{ Storage::url(config('web_config')['WEB_FAVICON']) }}" alt="gallery" width="100">
+                </figure>
                 <input type="file" name="WEB_FAVICON" class="form-control {{ $errors->has('WEB_FAVICON') ? 'is-invalid' : '' }}">
               </div>
               @if($errors->has('WEB_FAVICON'))

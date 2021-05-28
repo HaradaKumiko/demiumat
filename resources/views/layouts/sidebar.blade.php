@@ -1,7 +1,7 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
-        <a href="/">{{config('web_config')['WEB_TITLE']}}</a>
+        <a href="/"> <img src="{{ Storage::url(config('web_config')['WEB_LOGO']) }}" alt="Logo" width="200" class="img-fluid"> </a>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
         <a href="/">DU</a>

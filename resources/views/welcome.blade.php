@@ -20,12 +20,6 @@
   <!-- Template Main CSS File -->
   <link href="{{asset('assets/frontend/css/style.css')}}" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Shuffle - v2.3.1
-  * Template URL: https://bootstrapmade.com/bootstrap-3-one-page-template-free-shuffle/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -93,9 +87,7 @@
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="#"><span>{{config('web_config')['WEB_TITLE']}}</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <a href=""><img src="{{ Storage::url(config('web_config')['WEB_LOGO']) }}" alt="Logo" class="img-fluid"></a>
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
