@@ -9,8 +9,8 @@
       <ul class="sidebar-menu">
               <li class="{{ (Request::segment(1) == 'dashboard') ? 'active' : '' }}"><a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-fire"></i><span>Dashboard</span></a></li>
               <li class="{{ (Request::segment(1) == 'summary') ? 'active' : '' }}"><a class="nav-link" href="{{route('cashs.index')}}"><i class="fas fa-money-bill-wave-alt"></i><span>Rekapitulasi Kas</span></a></li>
-              <li class="{{ (Request::segment(1) == 'forums') ? 'active' : '' }}"><a class="nav-link" href="{{ route('forums.index') }}"><i class="fas fa-pencil-alt"></i><span>Forum</span></a></li>
               <li class="{{ (Request::segment(1) == 'blogs') ? 'active' : '' }}"><a class="nav-link" href="{{ route('blogs.index') }}"><i class="fas fa-indent"></i><span>Blog</span></a></li>
+              <li class="{{ (Request::segment(1) == 'forums') ? 'active' : '' }}"><a class="nav-link" href="{{ route('forums.index') }}"><i class="fas fa-pencil-alt"></i><span>Forum</span></a></li>
               @if(auth::user()->role == 'Administrator')
               <li class="menu-header">Admin Page</li>
               <li class="{{ (Request::segment(2) == 'users') ? 'active' : '' }}"><a class="nav-link" href="{{ route('users.index') }}"><i class="fas fa-user"></i><span>Pengguna</span></a></li>

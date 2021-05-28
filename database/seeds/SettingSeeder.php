@@ -14,18 +14,16 @@ class SettingSeeder extends Seeder
     {
         Setting::insert([
             ['key' => 'WEB_TITLE', 'value' => 'DemiUmat'],
-            ['key' => 'WEB_PLACE_NAME', 'value' => 'Baitus Sholihin'],
-            ['key' => 'WEB_PLACE_ADDRESS', 'value' => 'Batu Ampar, Kec. Balikpapan Utara, Kota Balikpapan, Kalimantan Timur 76136'],
-            ['key' => 'WEB_LOGO', 'value' => 'logo.png'],
-            ['key' => 'WEB_FAVICON', 'value' => 'favicon.png'],
+            ['key' => 'WEB_PLACE_NAME', 'value' => ' Masjid Baitus Sholihin'],
+            ['key' => 'WEB_PLACE_ADDRESS', 'value' => 'Jl. Soekarno Hatta No 12 KM 6 Kelurahan Graha Indah, Kec. Balikpapan Utara, Kota Balikpapan, Kalimantan Timur 76136'],
+            ['key' => 'WEB_LOGO', 'value' => 'assets/logo.png'],
+            ['key' => 'WEB_FAVICON', 'value' => 'assets/favicon.png'],
             ['key' => 'WEB_HEADER', 'value' => 'Selamat Datang di Website DemiUmat'],
             ['key' => 'WEB_MOTTO', 'value' => 'Dari Umat, Oleh Umat, Untuk Umat'],
-            ['key' => 'WEB_BACKGROUND_IMAGE', 'value' => 'umat.jpg'],
-            ['key' => 'WEB_DESCRIPTION', 'value' => 'DemiUmat adalah aplikasi management masjid berbasis website bertujuan memudahkan tugas para takmir masjid.
-            Tujuan lain untuk menambah portofolio Saya Sebagai Web Developer, Saya berharap aplikasi ini bisa membantu banyak orang dan bisa menjadi amal jariyah Saya kelak di akhirat nanti. 
-            Kedepannya akan Saya coba untuk menambahkan fitur yang sekiranya dibutuhkan. Silahkan download source code ini secara gratis untuk keperluan belajar atau menggunakannya di Masjid/Musholla bila ada kendala silahkan menghubungi Saya akan Saya bantu sebisa mungkin, 
-            Saya mohon dengan penuh hormat dilarang untuk memperjual-belikan source-code ini dan sebisa mungkin untuk tidak mengganti atau menghilangkan creditnya'
-            ],
+            ['key' => 'WEB_PLACE_IMAGE', 'value' => 'assets/slide/slide1.jpg'],
+            ['key' => 'WEB_TAKMIR_IMAGE', 'value' => 'assets/slide/slide2.jpg'],
+            ['key' => 'WEB_SLIDE_IMAGE', 'value' => 'assets/slide/slide3.jpg'],
+            ['key' => 'WEB_DESCRIPTION', 'value' => 'DemiUmat Adalah Aplikasi Management Masjid Berbasis Website Yang Bertujuan Untuk Memudahkan Tugas Para Takmir Masjid.'],
         ]);
     }
 }

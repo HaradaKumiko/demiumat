@@ -21,8 +21,6 @@ class SettingController extends Controller
             'WEB_LOGO' => 'nullable|mimes:jpg,jpeg,png|max:5120',
             'WEB_FAVICON' => 'nullable|mimes:jpg,jpeg,png|max:5120',
             'WEB_BACKGROUND_IMAGE' => 'nullable|mimes:jpg,jpeg,png|max:5120',
-            'WEB_HEADER' => 'required',
-            'WEB_MOTTO' => 'required',
         ],
 
         [
@@ -38,10 +36,6 @@ class SettingController extends Controller
 
             'WEB_BACKGROUND_IMAGE.mimes' => 'Format Latar Belakang Harus Berupa : Jpg,Jpeg,Png!',
             'WEB_BACKGROUND_IMAGE.max' => 'Ukuran Background Maximal 5 MB!',
-
-            'WEB_HEADER.required' => 'Header Website Harus Diisi!',
-
-            'WEB_MOTTO.required' => 'Semboyan Masjid / Musholla Harus Diisi!',
         ]);
 
         $updates = $request->all();

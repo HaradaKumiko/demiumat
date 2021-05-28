@@ -45,30 +45,6 @@
           </div>
 
           <div class="form-group row align-items-center">
-            <label class="form-control-label col-sm-3 text-md-right">Header Website</label>
-            <div class="col-sm-6 col-md-9">
-              <input type="text" name="WEB_HEADER" class="form-control {{ $errors->has('WEB_HEADER') ? 'is-invalid' : '' }}" value="{{ config('web_config')['WEB_HEADER'] }}">
-              @if($errors->has('WEB_HEADER'))
-              <div class="invalid-feedback">
-                {{$errors->first('WEB_HEADER')}}
-              </div>  
-              @endif  
-            </div>
-          </div>
-  
-          <div class="form-group row align-items-center">
-            <label class="form-control-label col-sm-3 text-md-right">Semboyan Masjid / Musholla</label>
-            <div class="col-sm-6 col-md-9">
-              <input type="text" name="WEB_MOTTO" class="form-control {{ $errors->has('WEB_MOTTO') ? 'is-invalid' : '' }}" value="{{ config('web_config')['WEB_MOTTO'] }}">
-              @if($errors->has('WEB_MOTTO'))
-              <div class="invalid-feedback">
-                {{$errors->first('WEB_MOTTO')}}
-              </div>  
-              @endif 
-            </div>
-          </div>
-
-          <div class="form-group row align-items-center">
             <label class="form-control-label col-sm-3 text-md-right">Logo Website</label>
             <div class="col-sm-6 col-md-9">
               <div class="custom-file">

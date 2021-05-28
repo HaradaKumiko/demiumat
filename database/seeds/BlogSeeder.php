@@ -44,6 +44,33 @@ class BlogSeeder extends Seeder
                 'user_id' => 3,
                 'created_at' => Carbon::now()
             ],
+
+            [
+                'title' => 'Selamat Berpuasa',
+                'slug' => 'Selamat-Berpuasa',
+                'content' => $faker->text(200),
+                'thumbnail' => 'thumbnail/default/default.jpg',
+                'user_id' => 1,
+                'created_at' => Carbon::now()
+            ],
+
+            [
+                'title' => 'Jangan Lupa Membayar Zakat',
+                'slug' => 'Jangan-Lupa-Membayar-Zakat',
+                'content' => $faker->text(200),
+                'thumbnail' => 'thumbnail/default/img2.jpg',
+                'user_id' => 1,
+                'created_at' => Carbon::now()
+            ],
+
+            [
+                'title' => 'Selamat Hari Raya Idul Fitri',
+                'slug' => 'Selamat-Hari-Raya-Idul-Fitri',
+                'content' => $faker->text(200),
+                'thumbnail' => 'thumbnail/default/img1.jpg',
+                'user_id' => 1,
+                'created_at' => Carbon::now()
+            ],
         ]);
     }
 }

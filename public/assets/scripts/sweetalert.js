@@ -5,7 +5,7 @@ $('.btn-delete').click(function() {
         text: "Apakah anda yakin ingin menghapus?",
         icon: 'question',
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
+        confirmButtonColor: '#6777EF',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Hapus'
     }).then((result) => {

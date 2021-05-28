@@ -36,6 +36,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function getAvatar()
+    {
+        return Storage::url(Auth::user()->avatar);
+    }
+
     public function forums()
     {
         return $this->hasMany('App\Models\Forum');
