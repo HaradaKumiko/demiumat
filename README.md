@@ -1,61 +1,91 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<h1 align="center">Welcome To DemiUmat! </h1>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+------------
+## Apa Itu DemiUmat ? 
+<p> DemiUmat Adalah Aplikasi Management Masjid Berbasis Website Yang Bertujuan Untuk Memudahkan Tugas Para Takmir Masjid. </p>
 
-## About Laravel
+------------
+## DemiUmat Dibangun Oleh
+<p> Build With Laravel, Bootstrap, & Stisla </p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+------------
+## Fitur Apa Saja Yang Tersedia? 
+Untuk versi saat ini Fitur yang tersedia adalah : 
+ - Sistem Login yang dibuat dengan Middleware yang bisa mengecek hak akses user, apakah user tersebut memiliki akses tersebut atau tidak 
+ - CRUD Blog
+ - CRUD Forum
+ - CRUD User
+ - CRUD Inventaris
+ - List User & CRUD
+ - Rekapitulasi kas & CRUD kas masuk & keluar
+ - Setting Website (mengubah nama & alamat masjid/musholla, logo, favicon, serta gambar tampilan depan website)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+------------
+![1](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/1.png?raw=true)
+![2](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/2.png?raw=true)
+![3](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/3.png?raw=true)
+![4](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/4.png?raw=true)
+![5](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/5.png?raw=true)
+![6](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/6.png?raw=true)
+![7](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/7.png?raw=true)
+![8](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/8.png?raw=true)
+![9](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/9.png?raw=true)
+![10](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/10.png?raw=true)
+![11](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/11.png?raw=true)
+![12](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/12.png?raw=true)
+![13](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/13.png?raw=true)
+![14](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/14.png?raw=true)
+![15](https://github.com/HaradaKumiko/demiumat/blob/master/public/assets/img/15.png?raw=true)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+------------
+## How To Run 
 
-## Learning Laravel
+1. **Clone Repository**
+```bash
+git clone https://github.com/HaradaKumiko/demiumat.git
+cd demiumat
+composer install
+npm install
+cp .env.example .env 
+php artisan key:generate
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. **Buat Database 'demiumat' Terlebih Dahulu Kemudian Edit File .env**
+```bash
+DB_PORT=3306
+DB_DATABASE=demiumat
+DB_USERNAME=**username_server**
+DB_PASSWORD=**password_server**
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. **Install**
+```bash
+php artisan migrate
+php artisan db:seed
+php artisan storage:link
+```
 
-## Laravel Sponsors
+4. **Enjoy**
+```bash
+php artisan serve
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+**User Default**
+```bash
+      Email                Password       Role
+--------------------------------------------------------
+farhan@farhan.net       | admin123    | Administrator
+budihidayat@gmail.com   | password123 | Pengurus Takmir
+yonosaefullah@gmail.com | password123 | Warga
+--------------------------------------------------------
+```
 
-### Premium Partners
+------------
+## 🧑 Find Me 
+<p>If you need something from me, feel free to contact me at : <p>
+Facebook : <a href="https://www.facebook.com/han.rivaldy.5">Farhan Rivaldy</a><br>
+LinkedIn : <a href="https://www.linkedin.com/in/farhanrivaldy">Farhan Rivaldy</a><br>
+Email    : <a href="mailto:fariv.fariv12@gmail.com">Farhan Rivaldy</a>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+------------
+**Made with ❤️ by HaradaKumiko - FarhanRivaldy**
