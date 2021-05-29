@@ -5,7 +5,7 @@
 <p> DemiUmat Adalah Aplikasi Management Masjid Berbasis Website Yang Bertujuan Untuk Memudahkan Tugas Para Takmir Masjid. </p>
 
 ------------
-## DemiUmat Dibangun Oleh
+## DemiUmat Dibangun Menggunakan :
 <p> Build With Laravel, Bootstrap, & Stisla </p>
 
 ------------
